@@ -1,8 +1,10 @@
 import SectionTitle from "../components/SectionTitle";
 import { skills } from "../data/skills";
+import Reveal from "../components/Reveal";
 
 const SkillsSection = () => {
   return (
+    <Reveal>
     <section id="skills" className="max-w-6xl mx-auto px-6 py-20">
       <SectionTitle title="Skills" subtitle="Technologies and tools I work with" />
 
@@ -17,6 +19,7 @@ const SkillsSection = () => {
         ))}
       </div>
     </section>
+    </Reveal>
   );
 };
 

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import Reveal from "../components/Reveal";
 
 const IntroSection = () => {
   return (
+    <Reveal>
     <section id="intro" className="max-w-6xl mx-auto px-6 pt-32 pb-24">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
@@ -30,6 +32,7 @@ const IntroSection = () => {
         </a>
       </div>
     </section>
+    </Reveal>
   );
 };
 

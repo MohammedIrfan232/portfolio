@@ -1,7 +1,9 @@
 import SectionTitle from "../components/SectionTitle";
+import Reveal from "../components/Reveal";
 
 const ContactSection = () => {
   return (
+    <Reveal>
     <section id="contact" className="max-w-6xl mx-auto px-6 py-20">
       <SectionTitle
         title="Contact"
@@ -47,6 +49,7 @@ const ContactSection = () => {
         </p>
       </div>
     </section>
+    </Reveal>
   );
 };
 

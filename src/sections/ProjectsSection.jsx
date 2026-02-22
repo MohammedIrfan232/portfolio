@@ -2,12 +2,14 @@ import { useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 import { projects } from "../data/projects";
 import ProjectModal from "../components/ProjectModal";
+import Reveal from "../components/Reveal";
 
 const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <>
+  <Reveal>
       <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
         <SectionTitle title="Projects" subtitle="Some things I've built" />
 
@@ -42,6 +44,8 @@ const ProjectsSection = () => {
           ))}
         </div>
       </section>
+  </Reveal>
+
 
       {/* ⭐ IMPORTANT — modal OUTSIDE section */}
       <ProjectModal
