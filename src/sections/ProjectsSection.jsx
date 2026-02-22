@@ -1,7 +1,11 @@
+import { useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 import { projects } from "../data/projects";
+import ProjectModal from "../components/ProjectModal";
 
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
       <SectionTitle title="Projects" subtitle="Some things I've built" />
@@ -10,7 +14,8 @@ const ProjectsSection = () => {
         {projects.map((p) => (
           <div
             key={p.title}
-            className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
+            onClick={() => setSelectedProject(p)}
+            className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition cursor-pointer"
           >
             {/* Title */}
             <h3 className="text-xl font-semibold">{p.title}</h3>
@@ -25,7 +30,7 @@ const ProjectsSection = () => {
               <b>Solution:</b> {p.solution}
             </p>
 
-            {/* Tech stack */}
+            {/* Tech */}
             <div className="flex flex-wrap gap-2 mt-3">
               {p.tech.map((t) => (
                 <span
@@ -36,34 +41,15 @@ const ProjectsSection = () => {
                 </span>
               ))}
             </div>
-
-            {/* Buttons */}
-            <div className="flex gap-3 mt-4">
-              {p.github && (
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm px-3 py-1 border rounded hover:bg-gray-100"
-                >
-                  GitHub
-                </a>
-              )}
-
-              {p.demo && (
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm px-3 py-1 border rounded hover:bg-gray-100"
-                >
-                  Live Demo
-                </a>
-              )}
-            </div>
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 };
