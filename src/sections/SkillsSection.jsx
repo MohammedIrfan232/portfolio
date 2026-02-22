@@ -1,24 +1,28 @@
 import SectionTitle from "../components/SectionTitle";
-import { skills } from "../data/skills";
 import Reveal from "../components/Reveal";
+
+const skills = ["Java", "JavaScript", "HTML", "CSS", "React.js", "MySQL"];
 
 const SkillsSection = () => {
   return (
     <Reveal>
-    <section id="skills" className="max-w-6xl mx-auto px-6 py-20">
-      <SectionTitle title="Skills" subtitle="Technologies and tools I work with" />
+      <section id="skills" className="max-w-6xl mx-auto px-6 py-20">
+        <SectionTitle
+          title="Skills"
+          subtitle="Technologies and tools I work with"
+        />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {skills.map((skill) => (
-          <div
-            key={skill}
-            className="bg-white border rounded-xl p-4 text-center shadow-sm hover:shadow transition"
-          >
-            {skill}
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          {skills.map((skill) => (
+            <div
+              key={skill}
+              className="border rounded-lg py-3 text-center shadow-sm hover:shadow transition"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
     </Reveal>
   );
 };
