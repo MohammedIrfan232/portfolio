@@ -9,6 +9,7 @@ const ContactSection = () => {
       />
 
       <div className="space-y-3 text-gray-600">
+        {/* Email */}
         <p>
           <b>Email:</b>{" "}
           <a
@@ -19,27 +20,29 @@ const ContactSection = () => {
           </a>
         </p>
 
+        {/* GitHub */}
         <p>
           <b>GitHub:</b>{" "}
           <a
-            href="#"
-            className="text-blue-600 hover:underline"
+            href="https://github.com/MohammedIrfan232"
             target="_blank"
             rel="noreferrer"
+            className="text-blue-600 hover:underline"
           >
-            github.com/username
+            https://github.com/MohammedIrfan232
           </a>
         </p>
 
+        {/* LinkedIn */}
         <p>
           <b>LinkedIn:</b>{" "}
           <a
-            href="#"
-            className="text-blue-600 hover:underline"
+            href="https://linkedin.com/in/mohammed-irfan-s-282776353/"
             target="_blank"
             rel="noreferrer"
+            className="text-blue-600 hover:underline"
           >
-            linkedin.com/in/username
+            https://linkedin.com/in/mohammed-irfan-s-282776353/
           </a>
         </p>
       </div>
