@@ -4,14 +4,16 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
+        initial={{ scale: 0.6, opacity: 0, y: 50 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
         onClick={(e) => e.stopPropagation()}
         className="bg-white rounded-xl p-6 max-w-lg w-full shadow-xl"
       >
@@ -62,7 +64,7 @@ const ProjectModal = ({ project, onClose }) => {
           )}
         </div>
 
-        {/* Close */}
+        {/* Close button */}
         <button
           onClick={onClose}
           className="mt-6 px-4 py-2 border rounded hover:bg-gray-100"
@@ -70,7 +72,7 @@ const ProjectModal = ({ project, onClose }) => {
           Close
         </button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
