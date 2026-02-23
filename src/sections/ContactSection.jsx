@@ -1,52 +1,44 @@
-import SectionTitle from "../components/SectionTitle";
 import Reveal from "../components/Reveal";
 
 const ContactSection = () => {
   return (
-    <Reveal>
-      <section id="contact" className="max-w-6xl mx-auto px-6 py-20">
-        <SectionTitle
-          title="Contact"
-          subtitle="Feel free to reach out for opportunities or collaboration"
-        />
+    <section id="contact" className="max-w-6xl mx-auto px-6 py-28 scroll-mt-28">
+      <Reveal>
+        <h2 className="text-3xl font-bold mb-2">Contact</h2>
+        <p className="text-gray-400 mb-6">
+          Feel free to reach out for collaboration
+        </p>
 
-        <div className="space-y-3 text-gray-600">
+        <div className="glass rounded-xl p-6 space-y-2">
           <p>
-            <b>Email:</b>{" "}
-            <a
-              href="mailto:sm0361436@gmail.com"
-              className="text-blue-600 hover:underline"
-            >
+            Email:{" "}
+            <a href="mailto:sm0361436@gmail.com" className="text-cyan-400">
               sm0361436@gmail.com
             </a>
           </p>
-
           <p>
-            <b>GitHub:</b>{" "}
+            GitHub:{" "}
             <a
+              className="text-cyan-400"
               href="https://github.com/MohammedIrfan232"
               target="_blank"
-              rel="noreferrer"
-              className="text-blue-600 hover:underline"
             >
-              github.com/MohammedIrfan232
+              MohammedIrfan232
             </a>
           </p>
-
           <p>
-            <b>LinkedIn:</b>{" "}
+            LinkedIn:{" "}
             <a
+              className="text-cyan-400"
               href="https://linkedin.com/in/mohammed-irfan-s-282776353/"
               target="_blank"
-              rel="noreferrer"
-              className="text-blue-600 hover:underline"
             >
-              linkedin.com/in/mohammed-irfan-s-282776353
+              Profile
             </a>
           </p>
         </div>
-      </section>
-    </Reveal>
+      </Reveal>
+    </section>
   );
 };
 

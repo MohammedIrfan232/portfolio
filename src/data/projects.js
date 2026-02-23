@@ -5,7 +5,7 @@ export const projects = [
     solution:
       "IoT sensors integrated with weather forecasting to automate irrigation scheduling.",
     tech: ["IoT", "Weather API", "ML"],
-    github: "",
+    github: "https://github.com/MohammedIrfan232/weather-aware-smart-irrigation-system",
     demo: ""
   },
   {
@@ -14,7 +14,7 @@ export const projects = [
     solution:
       "Developed a web-based music streaming interface with playlist management and media controls during internship.",
     tech: ["React", "JavaScript", "CSS"],
-    github: "",
+    github: "https://github.com/MohammedIrfan232/music-streaming-website",
     demo: ""
   }
 ];

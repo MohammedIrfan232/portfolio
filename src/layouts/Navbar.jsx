@@ -1,16 +1,51 @@
-const Navbar = () => {
-  return (
-    <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="font-bold text-lg">Irfan</h1>
+import { useEffect, useState } from "react";
 
-        <div className="flex gap-6 text-sm">
-          <a href="#intro" className="hover:text-blue-600">Home</a>
-          <a href="#skills" className="hover:text-blue-600">Skills</a>
-          <a href="#projects" className="hover:text-blue-600">Projects</a>
-          <a href="#contact" className="hover:text-blue-600">Contact</a>
-        </div>
-      </div>
+const sections = ["home", "skills", "projects", "contact"];
+
+const Navbar = () => {
+  const [active, setActive] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = "home";
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150) current = id;
+        }
+      });
+
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 glass rounded-full px-8 py-3 flex gap-8 z-50">
+      {sections.map((id) => (
+        <a
+          key={id}
+          href={`#${id}`}
+          className={`relative capitalize transition ${
+            active === id ? "text-cyan-400" : "text-gray-300"
+          }`}
+        >
+          {id}
+
+          {/* underline */}
+          <span
+            className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
+              active === id ? "w-full" : "w-0"
+            }`}
+          />
+        </a>
+      ))}
     </nav>
   );
 };

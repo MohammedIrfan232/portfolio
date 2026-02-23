@@ -2,10 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== GLOBAL THEME ===== */
+
+body {
+  background: radial-gradient(circle at 20% 20%, #0f172a, #020617);
+  color: #e2e8f0;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===== GLASS CARD SYSTEM ===== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== SCROLL SMOOTH ===== */
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+/* ===== PROFILE GLOW RING ===== */
+
+.glow-cyan {
+  position: relative;
+}
+
+.glow-cyan::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    #06b6d4,
+    #22d3ee,
+    #0ea5e9,
+    #06b6d4
+  );
+  filter: blur(18px);
+  opacity: 0.8;
+  animation: spinGlow 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spinGlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== GRID BACKGROUND ===== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  pointer-events: none;
+  z-index: -1;
 }
